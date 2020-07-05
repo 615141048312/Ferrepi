@@ -1,26 +1,24 @@
-# ふぇるれぴ
+# README
 
-## サイト概要
-鉄欠乏予防に特化したレシピ投稿サイト
-* スマホで手軽にみられる
-* レシピの投稿ができる
-* レシピの詳細検索ができる
-* レシピを作った、アレンジした、などの報告（コメント）ができる
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-### サイトテーマ
-鉄欠乏予防に特化したレシピサイト
+Things you may want to cover:
 
-### テーマを選んだ理由
-母や自分を始め身近に鉄欠乏性貧血の人が多いと感じたため。
-また、上の理由で大学の授業内でのレポートで貧血を取り扱ったため。
+* Ruby version
 
-### ターゲットユーザ
-20代〜　女性
+* System dependencies
 
-### 主な利用シーン
-日々の献立決め
+* Configuration
 
-## 設計書
+* Database creation
 
-### 機能一覧
-https://docs.google.com/spreadsheets/d/e/2PACX-1vQw4DhhHOqH0KGPrWgDEIXyktDkhgoCrR9sBabV7vcOvaystBicRmPmxbWsPynrqQP9FNvj1iGOO_aS/pubhtml
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
