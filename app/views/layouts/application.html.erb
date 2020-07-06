@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="glyphicon glyphicon-log-out" aria-hidden="true">ログアウト</i>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_registration_path do %>
+        <i class="glyphicon glyphicon-new-window" aria-hidden="true">新規登録</i>
+      <% end %>
+      <%= link_to  new_user_session_path do%>
+        <i class="glyphicon glyphicon-log-in" aria-hidden="true">ログイン</i>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
