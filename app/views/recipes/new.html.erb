@@ -1,0 +1,47 @@
+    <%= form_for(@recipe, url:"") do |f| %>
+
+      <%= f.label :image, class: 'image_label' do %>
+        <div class="prev-content">
+          <%= attachment_image_tag item, :image, :fill, 300, 300, fallback: "no_image.png", size:'300x300', class: "prev-image" %>
+        </div>
+      <% end %>
+
+      <%= f.attachment_field :image %>
+
+          <%= f.label :recipe_name, "レシピ名" %>
+          <%= f.text_field :recipe_name %>
+
+          <%= f.label :caption, "このレシピについて" %>
+          <%= f.text_area :caption %>
+
+        <%= f.fields_for :ingredient do |i| %>
+          <h6>材料</h6>
+          <%= f.label :ingredient, "食材名" %>
+          <%= f.text_area :ingredient %>
+          <%= f.label :amount, "分量" %>
+          <%= f.text_area :amount %>
+        <% end %>
+
+
+          <%= f.label :genre, "ジャンル" %>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+
+          <%= f.label :price, "税抜価格" %>
+          <%= f.text_field :price %>
+
+          <%= f.label :is_valid, "販売ステータス" %>
+          <%= f.select :is_valid, Item.is_valids.keys.map {|k| [k,k]}, {} %>
+
+
+
+      <%= f.submit %>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="row alert alert-warning">
+          <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+  <%= javascript_include_tag 'admins/image_preview.js' %>
+
