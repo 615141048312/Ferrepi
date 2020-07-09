@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_062424) do
     t.integer "main_ingredient_id"
     t.integer "user_id"
     t.string "recipe_name", null: false
-    t.integer "recipe_image_id"
+    t.string "recipe_image_id"
     t.text "caption", null: false
     t.integer "category", null: false
     t.integer "time_required", null: false

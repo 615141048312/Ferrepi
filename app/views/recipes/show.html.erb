@@ -1,0 +1,26 @@
+<%= @recipe.recipe_name %><br>
+
+<%= attachment_image_tag @recipe, :recipe_image, :fill, 300, 300, fallback: "no_image.png", size:'300x300', class: "" %><br>
+
+<%= @recipe.caption %><br>
+
+<%= @recipe.how_many_serving %><p>人前</p><br>
+
+<p>メイン食材：</p>
+<%= @recipe.main_ingredient.food_name %><br>
+
+<% @ingredients.each do |ingredient| %>
+ <%= ingredient.ingredient %>
+ <%= ingredient.amount %>
+<% end %><br>
+
+<% @instractions.each do |instraction| %>
+  <%= instraction.order %>
+  <%= instraction.procedure %>
+<% end %>
+
+<p>料理区分</p>
+<%= @recipe.category %><br>
+
+<p>調理時間</p>
+<%= @recipe.time_required %>
