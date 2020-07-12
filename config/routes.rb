@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root 'home#index', as: 'home'
   resources :recipes
   resource :users
+  get '/search', to: 'search#search'
+  get '/search/form', to: 'search#form'
 end

@@ -1,0 +1,4 @@
+<h2>検索結果</h2>
+<% unless @search_params.blank? %>
+<%= render 'home/recipes', recipes: @recipes %>
+<% end %>
