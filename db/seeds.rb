@@ -6,8 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 追記
-MainIngredient.create(
-  food_name: '鶏卵（全卵）',
-  food_group: 4
-)
+# メイン食材
+  [
+    ['高野豆腐', 0],
+    ['ほうれん草', 1],
+    ['アサリ', 2],
+    ['牛・ひき肉', 3],
+    ['鶏卵（全卵）', 4],
+  ].each do |name, group|
+    MainIngredient.create!(
+        { food_name: name, food_group: group}
+      )
+  end

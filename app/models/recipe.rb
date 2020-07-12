@@ -11,4 +11,18 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :instractions
 
   attachment :recipe_image
+
+  scope :search, -> (search_params) do
+    return if search_params.blank?
+
+    recipe_name_like(search_params[:recipe_name])
+    .ingredient_like(search_params[:ingredient])
+    .time_required_is(search_params[:time_required])
+    .category_is(search_params[:category])
+  end
+
+  scope :recipe_name_like, -> (recipe_name) { where('recipe_name LIKE ?', "%#{recipe_name}%") if recipe_name.present? }
+  scope :ingredient_like, -> (ingredient) { where('ingredient LIKE ?', "%#{ingredient}%") if ingredient.present? }
+  scope :time_required_is, -> (time_required) { where(time_required: time_required) if time_required.present? }
+  scope :category_is, -> (category) { where(category: category) if category.present? }
 end
