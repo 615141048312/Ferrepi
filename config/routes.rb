@@ -1,0 +1,9 @@
+Rails.application.routes.draw do
+  devise_for :users
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'home#index', as: 'home'
+  resources :recipes
+  resource :users
+  get '/search', to: 'search#search'
+  get '/search/form', to: 'search#form'
+end
