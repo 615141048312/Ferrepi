@@ -1,15 +1,27 @@
-<%= form_with(scope: :search, url: search_path, method: :get, local: true) do |f| %>
-  <%= f.label :recipe_name, "レシピ名" %>
-  <%= f.text_field :recipe_name %>
-
-  <%= f.label :ingredient, "材料名" %>
-  <%= f.text_field :ingredient %>
-
-  <p>所要時間</p>
-  <%= f.select :time_required, Recipe.time_requireds.keys.map {|k| [k,k]}, { include_blank: "未選択" } %>
-
-  <p>料理の種類</p>
-  <%= f.select :category, Recipe.categories.keys.map {|k| [k,k]}, { include_blank: "未選択" }%>
-
-  <%= submit_tag '検索' %>
-<% end %>
+<div class="container">
+  <%= form_with(scope: :search, url: search_path, method: :get, local: true) do |f| %>
+    <div class="row">
+      <%= f.label :recipe_name, "レシピ名" %>
+    </div>
+    <div class="row">
+        <%= f.text_field :recipe_name %>
+    </div>
+    <div class="row">
+      <%= f.label :ingredient, "材料名" %>
+    </div>
+    <div class="row">
+        <%= f.text_field :ingredient %>
+    </div>
+    <div class="row">
+        <p>所要時間</p>
+        <%= f.select :time_required, Recipe.time_requireds.keys.map {|k| [k,k]}, { include_blank: "未選択" } %>
+    </div>
+    <div class="row">
+        <p>料理の種類</p>
+        <%= f.select :category, Recipe.categories.keys.map {|k| [k,k]}, { include_blank: "未選択" }%>
+    </div>
+    <div class="row">
+      <%= submit_tag '検索', class: "btn btn-info" %>
+    </div>
+    <% end %>
+</div>

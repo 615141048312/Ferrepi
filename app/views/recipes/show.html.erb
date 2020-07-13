@@ -1,31 +1,42 @@
-<%= @recipe.recipe_name %><br>
-
-<%= attachment_image_tag @recipe, :recipe_image, :fill, 300, 300, fallback: "no_image.png", size:'300x300', class: "" %><br>
-
-<%= @recipe.caption %><br>
-
-<%= @recipe.how_many_serving %><p>人前</p><br>
-
-<p>メイン食材：</p>
-<%= @recipe.main_ingredient.food_name %><br>
-
-<% @ingredients.each do |ingredient| %>
- <%= ingredient.ingredient %>
- <%= ingredient.amount %>
-<% end %><br>
-
-<% @instractions.each do |instraction| %>
-  <%= instraction.order %>
-  <%= instraction.procedure %>
-<% end %>
-
-<p>料理区分</p>
-<%= @recipe.category %><br>
-
-<p>調理時間</p>
-<%= @recipe.time_required %>
-
-<% if @recipe.user == current_user %>
- <%= link_to "編集する", edit_recipe_path(@recipe) %>
- <%= link_to "削除する", recipe_path(@recipe), method: :delete, data: { confirm: '本当に消しますか？' } %>
-<% end %>
+<div class="container">
+  <div class="row recipe-name">
+    <%= @recipe.recipe_name %>
+  </div>
+  <div class="row">
+    <%= attachment_image_tag @recipe, :recipe_image, :fill, 300, 300, fallback: "no_image.png", size:'300x300', class: "" %>
+  </div>
+  <div class="row">
+    <%= @recipe.caption %>
+  </div>
+  <div class="row">
+    <span>メイン食材：</span><%= @recipe.main_ingredient.food_name %>
+  </div>
+  <p>材料</p>
+  <div class="row">
+    <%= @recipe.how_many_serving %><span>人前</span>
+  </div>
+  <% @ingredients.each do |ingredient| %>
+    <div class="row">
+       <%= ingredient.ingredient %>
+       <%= ingredient.amount %>
+    </div>
+  <% end %>
+  <% @instractions.each do |instraction| %>
+    <div class="row">
+      <%= instraction.order %>
+      <%= instraction.procedure %>
+    </div>
+  <% end %>
+  <div class="row">
+    <span>料理区分：</span><%= @recipe.category %>
+  </div>
+  <div class="row">
+    <span>調理時間：</span><%= @recipe.time_required %>
+  </div>
+  <div class="row">
+    <% if @recipe.user == current_user %>
+     <%= link_to "編集する", edit_recipe_path(@recipe) %>
+     <%= link_to "削除する", recipe_path(@recipe), method: :delete, data: { confirm: '本当に消しますか？' } %>
+    <% end %>
+  </div>
+</div>
