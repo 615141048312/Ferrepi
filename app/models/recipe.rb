@@ -15,10 +15,10 @@ class Recipe < ApplicationRecord
   scope :search, -> (search_params) do
     return if search_params.blank?
 
-    recipe_name_like(search_params[:recipe_name])
-    .ingredient_like(search_params[:ingredient])
-    .time_required_is(search_params[:time_required])
-    .category_is(search_params[:category])
+    recipe_name_like(search_params[:recipe_name]).
+      ingredient_like(search_params[:ingredient]).
+      time_required_is(search_params[:time_required]).
+      category_is(search_params[:category])
   end
 
   scope :recipe_name_like, -> (recipe_name) { where('recipe_name LIKE ?', "%#{recipe_name}%") if recipe_name.present? }

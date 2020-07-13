@@ -16,18 +16,31 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients
+    @instractions = @recipe.instractions
   end
 
   def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(recipe_params)
+    redirect_to recipe_path(@recipe)
   end
 
   def show
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
     @instractions = @recipe.instractions
+    @recipe.ingredients.build
+    @recipe.instractions.build
   end
 
   def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.ingredients.build
+    @recipe.instractions.build
+    @recipe.destroy
+    redirect_to home_path
   end
 
   private
