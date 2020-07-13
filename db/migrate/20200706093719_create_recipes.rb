@@ -1,8 +1,8 @@
 class CreateRecipes < ActiveRecord::Migration[5.2]
   def change
     create_table :recipes do |t|
-      t.references :main_ingredient, foreign_key: true
-      t.references :user, foreign_key: true
+      t.integer :main_ingredient_id, foreign_key: true
+      t.integer :user_id, foreign_key: true
       t.string :recipe_name, null: false
       t.string :recipe_image_id
       t.text :caption
