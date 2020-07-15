@@ -1,25 +1,28 @@
 <div class="row">
   <%= nested_form_for(@recipe) do |f| %>
-
-    <p>レシピの画像</p>
-    <%= f.attachment_field :recipe_image %>
-
-    <%= f.label :recipe_name, "レシピ名" %>
-    <%= f.text_field :recipe_name %>
-
-    <%= f.label :caption, "このレシピについて" %>
-    <%= f.text_area :caption %>
-
-    <h6>材料</h6>
-    <div class="col-xs-1">
-      <%= f.text_field :how_many_serving %>
+    <div class="row">
+      <h4>レシピの画像</h4>
+      <%= f.attachment_field :recipe_image %>
     </div>
-    <div class="col-xs-3">
-      <p>人前（半角数字を入力してください）</p>
+    <div class="row">
+      <%= f.label :recipe_name, "レシピ名" %>
+      <%= f.text_field :recipe_name %>
     </div>
-
-    <%= f.label :main_ingredient, "メイン食材" %>
-    <%= f.collection_select :main_ingredient_id, MainIngredient.all, :id, :food_name %>
+    <div class="row">
+      <%= f.label :caption, "このレシピについて" %>
+      <%= f.text_area :caption %>
+    </div>
+    <div class="row">
+      <h4>材料</h4>
+      <%= f.text_field :how_many_serving, class: "col-xs-1" %>
+      <div class="col-xs-11">
+        <p>人前（半角数字を入力してください）</p>
+      </div>
+    </div>
+    <div class="row">
+      <%= f.label :main_ingredient, "メイン食材" %>
+      <%= f.collection_select :main_ingredient_id, MainIngredient.all, :id, :food_name %>
+    </div>
 
     <%= f.fields_for :ingredients do |i| %>
       <%= i.label :ingredient, "食材名" %>
@@ -30,38 +33,41 @@
     <% end %>
     <%= f.link_to_add "行を追加", :ingredients %>
 
-    <h6>作り方</h6>
+    <h4>作り方</h4>
     <%= f.fields_for :instractions do |i| %>
       <%= i.select :order, options_for_select(1..30), include_blank: "番号を選択" %>
       <%= i.text_area :procedure, placeholder: "作り方を入力" %>
       <%= i.link_to_remove "行を削除"%>
     <% end %>
     <%= f.link_to_add "行を追加", :instractions %>
-
-    <h6>料理区分</h6>
-    <%= f.radio_button :category, :主食 %>
-    <%= f.label :主食 %>
-    <%= f.radio_button :category, :汁物 %>
-    <%= f.label :汁物 %>
-    <%= f.radio_button :category, :主菜 %>
-    <%= f.label :主菜 %>
-    <%= f.radio_button :category, :副菜 %>
-    <%= f.label :副菜 %>
-    <%= f.radio_button :category, :デザートやおやつなど %>
-    <%= f.label :デザートやおやつなど %>
-    <%= f.radio_button :category, :その他 %>
-    <%= f.label :その他 %>
-
-    <h6>調理時間</h6>
-    <%= f.radio_button :time_required, :十五分以内 %>
-    <%= f.label :十五分以内 %>
-    <%= f.radio_button :time_required, :十五分から三十分 %>
-    <%= f.label :十五分から三十分 %>
-    <%= f.radio_button :time_required, :三十分から一時間 %>
-    <%= f.label :三十分から一時間 %>
-    <%= f.radio_button :time_required, :一時間以上 %>
-    <%= f.label :一時間以上 %>
-
-    <%= f.submit "投稿する" %>
+    <div class="row">
+      <h4>料理区分</h4>
+      <%= f.radio_button :category, :主食 %>
+      <%= f.label :主食 %>
+      <%= f.radio_button :category, :汁物 %>
+      <%= f.label :汁物 %>
+      <%= f.radio_button :category, :主菜 %>
+      <%= f.label :主菜 %>
+      <%= f.radio_button :category, :副菜 %>
+      <%= f.label :副菜 %>
+      <%= f.radio_button :category, :デザートやおやつなど %>
+      <%= f.label :デザートやおやつなど %>
+      <%= f.radio_button :category, :その他 %>
+      <%= f.label :その他 %>
+    </div>
+    <div class="row">
+      <h4>調理時間</h4>
+      <%= f.radio_button :time_required, :十五分以内 %>
+      <%= f.label :十五分以内 %>
+      <%= f.radio_button :time_required, :十五分から三十分 %>
+      <%= f.label :十五分から三十分 %>
+      <%= f.radio_button :time_required, :三十分から一時間 %>
+      <%= f.label :三十分から一時間 %>
+      <%= f.radio_button :time_required, :一時間以上 %>
+      <%= f.label :一時間以上 %>
+    </div>
+    <div class="row">
+      <%= f.submit "投稿する" %>
+    </div>
   <% end %>
 </div>
