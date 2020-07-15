@@ -1,4 +1,8 @@
-<h2>マイページ</h2>
-<%= link_to "登録情報を変更する", edit_user_registration_path %>
-<h3>投稿したレシピ</h3>
+<div class="row">
+  <h2>マイページ</h2>
+  <%= link_to "登録情報を変更する", edit_user_registration_path %>
+</div>
+<div class="row">
+  <h3>投稿したレシピ</h3>
+</div>
 <%= render 'home/recipes', recipes: @posted %>

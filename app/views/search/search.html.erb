@@ -1,4 +1,6 @@
-<h2>検索結果</h2>
+<div class="row">
+  <h2>検索結果</h2>
+</div>
 <% unless @search_params.blank? %>
-<%= render 'home/recipes', recipes: @recipes %>
+  <%= render 'home/recipes', recipes: @recipes %>
 <% end %>
