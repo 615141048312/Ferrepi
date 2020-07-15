@@ -1,11 +1,15 @@
-<% recipes.each do |recipe| %>
-  <%= link_to recipe_path(recipe) do %>
-    <div class="row">
-      <%= attachment_image_tag recipe, :recipe_image, :fill, 300, 300, fallback: "no_image.png", size: "300x300" %>
-    </div>
-    <div class="row">
-      <%= recipe.recipe_name %>
-    </div>
+<div class="row">
+  <% recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe) do %>
+      <div class="col-xs-4 col-xs-offset-2">
+        <div class="row">
+          <%= attachment_image_tag recipe, :recipe_image, :fill, 300, 300, fallback: "no_image.png", size: "300x300" %>
+        </div>
+        <div class="row">
+          <%= recipe.recipe_name %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
-<%= paginate recipes %>
+  <%= paginate recipes %>
+</div>
