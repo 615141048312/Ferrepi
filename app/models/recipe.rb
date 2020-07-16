@@ -1,8 +1,8 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  belongs_to :main_ingredient
-  has_many :ingredients
-  has_many :instractions
+  belongs_to :main_ingredient, optional: true
+  has_many :ingredients, foreign_key: "recipe_id", dependent: :destroy
+  has_many :instractions, foreign_key: "recipe_id", dependent: :destroy
 
   enum category: { 主食: 0, 汁物: 1, 主菜: 2, 副菜: 3, デザートやおやつなど: 4, その他: 5 }
   enum time_required: { 十五分以内: 0, 十五分から三十分: 1, 三十分から一時間: 2, 一時間以上: 3 }
