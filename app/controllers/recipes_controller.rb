@@ -15,24 +15,10 @@ class RecipesController < ApplicationController
     end
   end
 
-  def edit
-    @recipe = Recipe.find(params[:id])
-    @ingredients = @recipe.ingredients
-    @instractions = @recipe.instractions
-  end
-
-  def update
-    @recipe = Recipe.find(params[:id])
-    @recipe.update(recipe_params)
-    redirect_to recipe_path(@recipe)
-  end
-
   def show
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
     @instractions = @recipe.instractions
-    @recipe.ingredients.build
-    @recipe.instractions.build
   end
 
   def destroy
@@ -40,7 +26,7 @@ class RecipesController < ApplicationController
     @recipe.ingredients.build
     @recipe.instractions.build
     @recipe.destroy
-    redirect_to home_path
+    redirect_to users_path
   end
 
   private
