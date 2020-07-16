@@ -12,6 +12,11 @@ class Recipe < ApplicationRecord
 
   attachment :recipe_image
 
+  validates :recipe_name, presence: true
+  validates :category, presence: true
+  validates :time_required, presence: true
+  validates :how_many_serving, presence: true
+
   scope :search, -> (search_params) do
     return if search_params.blank?
 
