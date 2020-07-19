@@ -69,6 +69,7 @@ gem 'rubocop-airbnb'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'nested_form'
+gem 'enum_help'
 
 gem 'dotenv-rails'
 group :production do
