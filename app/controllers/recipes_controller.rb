@@ -13,6 +13,8 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
+      @recipe.ingredients.build
+      @recipe.instractions.build
       render :new
     end
   end

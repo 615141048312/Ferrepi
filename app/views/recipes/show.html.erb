@@ -10,7 +10,9 @@
   <div class="row">
     <span>メイン食材：</span><%= @recipe.main_ingredient.food_name %>
   </div>
-  <p>材料</p>
+  <div class="row">
+    <p>材料</p>
+  </div>
   <div class="row">
     <%= @recipe.how_many_serving %><span>人前</span>
   </div>
@@ -20,6 +22,9 @@
        <%= ingredient.amount %>
     </div>
   <% end %>
+  <div class="row">
+    <p>作り方</p>
+  </div>
   <% @instractions.each do |instraction| %>
     <div class="row">
       <%= instraction.order %>
@@ -27,10 +32,10 @@
     </div>
   <% end %>
   <div class="row">
-    <span>料理区分：</span><%= @recipe.category %>
+    <span>料理区分：</span><%= @recipe.category_i18n %>
   </div>
   <div class="row">
-    <span>調理時間：</span><%= @recipe.time_required %>
+    <span>調理時間：</span><%= @recipe.time_required_i18n %>
   </div>
   <div class="row">
     <% if @recipe.user == current_user %>

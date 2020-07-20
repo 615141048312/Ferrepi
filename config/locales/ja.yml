@@ -2,7 +2,6 @@ ja:
   enum:
     recipe:
       category:
-        default: "--"
         staple: "主食"
         soup: "汁物"
         main: "主菜"
