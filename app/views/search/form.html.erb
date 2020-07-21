@@ -13,11 +13,11 @@
     </div>
     <div class="row">
         <p>所要時間</p>
-        <%= f.select :time_required, Recipe.time_requireds_i18n.keys.map {|k| [I18n.t("enum.recipe.time_required.#{k}"),k]}, { include_blank: "未選択" } %>
+        <%= f.select :time_required, Recipe.time_requireds_i18n.invert.to_a, { include_blank: "未選択" } %>
     </div>
     <div class="row">
         <p>料理の種類</p>
-        <%= f.select :category, Recipe.categories_i18n.keys.map {|k| [I18n.t("enum.recipe.category.#{k}"),k]}, { include_blank: "未選択" }%>
+        <%= f.select :category, Recipe.categories_i18n.invert.to_a, { include_blank: "未選択" }%>
     </div>
     <div class="row">
       <%= submit_tag '検索', class: "btn btn-info" %>

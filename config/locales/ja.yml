@@ -1,22 +1,22 @@
 ja:
-  enum:
+  enums:
     recipe:
       category:
-        staple: "主食"
-        soup: "汁物"
-        main: "主菜"
-        side: "副菜"
-        dessert: "おやつ・デザートなど"
-        other: "その他"
+        staple: 主食
+        soup: 汁物
+        main: 主菜
+        side: 副菜
+        dessert: おやつ・デザートなど
+        other: その他
       time_required:
-        till_15min: "15分以内"
-        till_30min: "15分〜30分"
-        till_1h: "30分〜1時間"
-        over_1h: "1時間以上"
+        till_15min: 15分以内
+        till_30min: 15分〜30分
+        till_1h: 30分〜1時間
+        over_1h: 1時間以上
     main_ingredient:
       food_group:
-        beans: "豆類"
-        vegetables: "野菜類"
-        seafood: "魚介類"
-        meat: "肉類"
-        eggs: "卵類"
+        beans: 豆類
+        vegetables: 野菜類
+        seafood: 魚介類
+        meat: 肉類
+        eggs: 卵類
