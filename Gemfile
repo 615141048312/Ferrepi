@@ -66,7 +66,7 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'kaminari', '~> 1.2.1'
 gem 'rubocop-airbnb'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
 gem 'nested_form'
 gem 'enum_help'
