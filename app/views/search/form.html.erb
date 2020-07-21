@@ -13,11 +13,11 @@
     </div>
     <div class="row">
         <p>所要時間</p>
-        <%= f.select :time_required, Recipe.time_requireds.keys.map {|k| [k,k]}, { include_blank: "未選択" } %>
+        <%= f.select :time_required, Recipe.time_requireds_i18n.invert.to_a, { include_blank: "未選択" } %>
     </div>
     <div class="row">
         <p>料理の種類</p>
-        <%= f.select :category, Recipe.categories.keys.map {|k| [k,k]}, { include_blank: "未選択" }%>
+        <%= f.select :category, Recipe.categories_i18n.invert.to_a, { include_blank: "未選択" }%>
     </div>
     <div class="row">
       <%= submit_tag '検索', class: "btn btn-info" %>

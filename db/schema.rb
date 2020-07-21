@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_07_07_062424) do
     t.string "amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
   create_table "instractions", force: :cascade do |t|
@@ -27,7 +26,6 @@ ActiveRecord::Schema.define(version: 2020_07_07_062424) do
     t.text "procedure", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["recipe_id"], name: "index_instractions_on_recipe_id"
   end
 
   create_table "main_ingredients", force: :cascade do |t|
@@ -42,14 +40,12 @@ ActiveRecord::Schema.define(version: 2020_07_07_062424) do
     t.integer "user_id"
     t.string "recipe_name", null: false
     t.string "recipe_image_id"
-    t.text "caption", null: false
+    t.text "caption"
     t.integer "category", null: false
     t.integer "time_required", null: false
     t.float "how_many_serving", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["main_ingredient_id"], name: "index_recipes_on_main_ingredient_id"
-    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
