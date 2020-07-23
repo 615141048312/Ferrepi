@@ -4,7 +4,8 @@ class SearchController < ApplicationController
 
   def search
     @search_params = recipe_search_params
-    @recipes = Kaminari.paginate_array(Recipe.search(@search_params).includes(:ingredients)).page(params[:page])
+    @recipes = Kaminari.paginate_array(Recipe.search(@search_params).includes(:ingredients)).
+      page(params[:page])
   end
 
   private
