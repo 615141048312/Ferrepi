@@ -20,7 +20,20 @@
 ### 主な利用シーン
 日々の献立決め
 
-## 設計書
+### 開発環境
+- OS
+Linux(CentOS)
+- 言語
+HTML,CSS,Ruby,SQL
+- フレームワーク
+Ruby on Rails
+- CSSフレームワーク
+Bootstrap
+- インフラ
+AWS(EC2,RDS,AMI,EIP)
+- その他ツールなど
+Vagrant,VirtualBox, Slack
+
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/e/2PACX-1vQw4DhhHOqH0KGPrWgDEIXyktDkhgoCrR9sBabV7vcOvaystBicRmPmxbWsPynrqQP9FNvj1iGOO_aS/pubhtml
